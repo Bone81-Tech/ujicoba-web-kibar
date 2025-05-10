@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak KIBAR - Hubungi Kami</title>
+    <meta name="description" content="Hubungi Komunitas Independen Bersama Azaz Rakyat (KIBAR) melalui alamat, telepon, email, atau formulir kontak yang tersedia. Temukan juga lokasi kami di peta.">
+    <meta name="keywords" content="Kontak KIBAR, Hubungi KIBAR, Alamat KIBAR, Email KIBAR, Telepon KIBAR, Formulir Kontak Ormas">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Style Kustom Anda -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/kibar-favicon.png" type="image/png"> 
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo/logo-kibar.webp" alt="Logo KIBAR">
+                </a>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                    <li><a href="struktur-organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="program-kerja.html">Program Kerja</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="kontak.html" class="active">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="pendaftaran.html" class="btn btn-primary">Pendaftaran Anggota</a>
+                <a href="donasi.html" class="btn btn-secondary">Donasi</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner-section">
+            <div class="container">
+                <h1 class="page-title">Hubungi KIBAR</h1>
+                <p class="page-subtitle">Kami senang mendengar dari Anda. Sampaikan pertanyaan, saran, atau informasi lainnya.</p>
+            </div>
+        </section>
+
+        <section class="contact-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 contact-info-column mb-5 mb-lg-0">
+                        <h2 class="section-subtitle">Informasi Kontak</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <div class="contact-text">
+                                    <h4>Alamat Kantor Pusat:</h4>
+                                    <p>Perum Denanyar Indah RT.001 /Blok Y2 No 20<br>Jombang - Jawa Timur, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt contact-icon"></i>
+                                <div class="contact-text">
+                                    <h4>Telepon / WhatsApp:</h4>
+                                    <p><a href="https://wa.me/6281216547657" target="_blank" rel="noopener noreferrer">0812-1654-7657 (Admin)</a></p>
+                                    <!-- Tambahkan nomor WA Pendaftaran jika ingin ditampilkan di sini juga -->
+                                    <!-- <p><a href="https://wa.me/NOMOR_WA_PENDAFTARAN" target="_blank" rel="noopener noreferrer">NOMOR_WA_PENDAFTARAN (Pendaftaran)</a></p> -->
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <div class="contact-text">
+                                    <h4>Email:</h4>
+                                    <p><a href="mailto:info@kibar.org">info@kibar.org</a></p>
+                                    <!-- Ganti dengan email resmi KIBAR jika ada -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-social-icons mt-4">
+                            <h4 class="subsection-title-sm">Terhubung dengan Kami:</h4>
+                            <a href="#" aria-label="Facebook KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="YouTube KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                            <!-- Ganti # dengan URL media sosial KIBAR yang sebenarnya -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 contact-form-column">
+                        <h2 class="section-subtitle">Kirim Pesan Langsung</h2>
+                        <form name="contact-kibar" method="POST" data-netlify="true" class="contact-form" netlify-honeypot="bot-field">
+                            <p class="d-none"> <!-- Honeypot field untuk Netlify -->
+                                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                            </p>
+                            <input type="hidden" name="form-name" value="contact-kibar" />
+                            
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap <span class="required-field">*</span></label>
+                                <input type="text" id="nama" name="nama" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Alamat Email <span class="required-field">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telepon">Nomor Telepon (Opsional)</label>
+                                <input type="tel" id="telepon" name="telepon" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="subjek">Subjek <span class="required-field">*</span></label>
+                                <input type="text" id="subjek" name="subjek" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pesan">Pesan Anda <span class="required-field">*</span></label>
+                                <textarea id="pesan" name="pesan" rows="6" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group text-right">
+                                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h2 class="section-subtitle text-center mb-4">Lokasi Kami</h2>
+                        <div class="map-responsive-wrapper">
+                            <!-- GANTI DENGAN KODE EMBED GOOGLE MAPS ANDA -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.277018924065!2d112.23640831530409!3d-7.544920976627901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e783ff3b8000001%3A0x8a6a4a4c25b0f9b2!2sPerumahan%20Denanyar%20Indah!5e0!3m2!1sid!2sid!4v1678888888888!5m2!1sid!2sid" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                            <!-- PASTIKAN ANDA MENGGANTI URL DI ATAS DENGAN URL EMBED GOOGLE MAPS YANG BENAR UNTUK LOKASI KIBAR -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-padding-top">
+        <!-- Konten Footer sama seperti di index.html -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 footer-col footer-about">
+                    <img src="images/slogan-kibar.webp" alt="Logo KIBAR Investigator Putih" class="footer-logo">
+                    <p class="footer-address">
+                        <strong>Kantor Pusat KIBAR:</strong><br>
+                        Perum Denanyar Indah RT.001 /Blok Y2 No 20<br>
+                        Jombang - Jawa Timur, Indonesia
+                    </p>
+                     <p class="footer-legal-info">
+                        Akte Notaris: YOUNEKE SOMPIE,SE.SH.Mkn No Akta : 02 Tgl : 08 Juni 2018.<br>
+                        Kep. KEMENKUMHAM RI Nomor: AHU-0007921.AH.01.07 THN 2018.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 footer-col">
+                    <h5 class="footer-widget-title">Tautan Cepat</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                        <li><a href="program-kerja.html">Program Kerja</a></li>
+                        <li><a href="struktur-organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="artikel.html">Artikel</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 footer-col">
+                     <h5 class="footer-widget-title">Bergabung</h5>
+                     <ul class="footer-links">
+                        <li><a href="pendaftaran.html">Pendaftaran Anggota</a></li>
+                        <li><a href="donasi.html">Donasi</a></li>
+                        <li><a href="galeri.html">Galeri Kegiatan</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12 footer-col">
+                    <h5 class="footer-widget-title">Hubungi Kami</h5>
+                    <ul class="footer-contact-info">
+                        <li><i class="fas fa-phone-alt"></i> <a href="https://wa.me/6281216547657">0812-1654-7657 (Admin)</a></li> 
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kibar.org">info@kibar.org</a></li>
+                    </ul>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Facebook KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube KIBAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center">© <span id="currentYear"></span> Komunitas Independen Bersama Azaz Rakyat (KIBAR). Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
