@@ -1160,7 +1160,7 @@ ul {
          * Perkiraan: (2 * (45px + 8px margin)) + 20px padding .header-actions = ~126px.
          * COBA DENGAN ANGKA SEKITAR 110px - 130px dan sesuaikan.
          */
-        padding-top: 125px; /* <<<< SESUAIKAN ANGKA INI! >>>> */
+        padding-top: 150px; /* <<<< SESUAIKAN ANGKA INI! >>>> */
     }
     .main-navigation ul {
         flex-direction: column;
