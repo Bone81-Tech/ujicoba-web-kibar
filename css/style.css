@@ -82,6 +82,39 @@ ul {
     padding: 0 15px;
 }
 
+/* Flexbox-based Responsive Grid System */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row > [class*="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+
+/* Desktop Grid (default) */
+.col-lg-8 { width: 66.666667%; }
+.col-lg-7 { width: 58.333333%; }
+.col-lg-5 { width: 41.666667%; }
+.col-lg-4 { width: 33.333333%; }
+.col-lg-3 { width: 25%; }
+.col-lg-2 { width: 16.666667%; }
+
+.col-md-7 { width: 58.333333%; }
+.col-md-6 { width: 50%; }
+.col-md-5 { width: 41.666667%; }
+.col-md-4 { width: 33.333333%; }
+
+.col-12 { width: 100%; }
+.col-6 { width: 50%; }
+
+/* Helper classes */
+.justify-content-center { justify-content: center; }
+
 .section-padding {
     padding: 80px 0;
 }
@@ -233,9 +266,10 @@ ul {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('../images/banner/banner-hero-beranda.jpg');
+    background-image: url('../images/banner/hero-background.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 90vh;
     min-height: 550px;
     position: relative;
@@ -266,10 +300,8 @@ ul {
     line-height: 1.2;
     color: var(--kibar-white);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-.hero-title span {
-    display: block;
-    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 .hero-subtitle {
     font-size: 1.25rem;
@@ -1069,27 +1101,29 @@ ul {
    Responsive Media Queries - START
    ========================================================================== */
 
+/* Tablet (768px - 991px) */
 @media (max-width: 991.98px) {
-    /* Pengaturan Umum untuk Kolom di Tablet dan Mobile Kecil */
+    /* Pengaturan Umum untuk Kolom di Tablet */
     .col-md-7, .col-md-5, .col-lg-4, .col-md-6, .col-lg-2, .col-lg-3,
-    .col-lg-8, .col-lg-4 { /* Menyatukan semua definisi kolom agar konsisten */
-        width: calc(100% - 30px);
+    .col-lg-8, .col-lg-4 {
+        width: calc(50% - 30px);
         margin-left: 15px;
         margin-right: 15px;
-        margin-bottom: 30px; /* Jarak antar kolom jika bertumpuk */
+        margin-bottom: 30px;
     }
     .col-md-7:last-child, .col-md-5:last-child, 
     .col-lg-4:last-child, .col-md-6:last-child, 
     .col-lg-2:last-child, .col-lg-3:last-child,
     .col-lg-8:last-child, .col-lg-4:last-child {
-        margin-bottom: 0; /* Hapus margin bawah untuk kolom terakhir di baris */
+        margin-bottom: 0;
     }
-
 
     /* Tombol Toggle Menu Mobile */
     .mobile-menu-toggle {
-        display: block; /* Selalu tampilkan tombol hamburger di mobile */
-        z-index: 1001; /* Pastikan di atas menu yang mungkin terbuka */
+        display: block;
+        z-index: 1001;
+        min-width: 44px; /* Touch-friendly */
+        min-height: 44px; /* Touch-friendly */
     }
     .mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
@@ -1103,64 +1137,55 @@ ul {
 
     /* Kontainer Tombol Aksi Header (.header-actions) untuk Mobile */
     .header-actions {
-        display: none; /* Sembunyikan secara default */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Tepat di bawah header */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--kibar-white);
         box-shadow: 0 5px 10px rgba(0,0,0,0.08);
-        padding: 10px 0; /* Padding atas & bawah untuk grup tombol */
-        z-index: 1000; /* Di atas konten lain, tapi bisa di bawah .main-navigation jika perlu */
+        padding: 10px 0;
+        z-index: 1000;
     }
     .header-actions.active {
-        display: flex; /* Tampilkan ketika menu mobile aktif */
+        display: flex;
     }
     .header-actions .btn {
         display: block;
-        width: calc(100% - 40px); /* Lebar tombol */
-        margin: 8px 20px; /* Jarak antar tombol dan dari tepi */
+        width: calc(100% - 40px);
+        margin: 8px 20px;
         text-align: center;
+        min-height: 44px; /* Touch-friendly */
+        line-height: 44px; /* Vertically center text */
     }
-    /* Beri border bawah untuk semua tombol kecuali yang terakhir di .header-actions */
     .header-actions .btn:not(:last-child) {
         border-bottom: 1px solid var(--kibar-light-gray);
-        padding-bottom: 16px; /* Tambah padding bawah agar border tidak terlalu mepet */
+        padding-bottom: 16px;
         margin-bottom: 8px; 
     }
      .header-actions .btn:last-child {
-        margin-top: 8px; /* Pastikan margin atas konsisten */
+        margin-top: 8px;
     }
-
 
     /* Navigasi Utama (.main-navigation) untuk Mobile */
     .main-navigation {
-        display: none; /* Sembunyikan secara default */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Juga tepat di bawah header, akan di-offset oleh padding-top */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--kibar-white);
-        box-shadow: 0 8px 10px rgba(0,0,0,0.1); /* Shadow sedikit berbeda jika di bawah */
-        z-index: 999; /* Sedikit di bawah .header-actions jika mereka tumpang tindih tanpa padding */
-        padding: 0; /* Padding akan diatur oleh offset dan item internal */
-        max-height: calc(100vh - 85px); /* Batasi tinggi menu, 85px adalah perkiraan tinggi header */
-        overflow-y: auto; /* Tambahkan scroll jika item menu banyak */
+        box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+        padding: 0;
+        max-height: calc(100vh - 85px);
+        overflow-y: auto;
     }
     .main-navigation.active {
         display: flex;
-        /* 
-         * PERHATIAN: Angka padding-top ini PERLU DISESUAIKAN!
-         * Ini untuk memberi ruang bagi .header-actions yang muncul di atasnya.
-         * Hitung perkiraan tinggi .header-actions saat aktif.
-         * Misal: 2 tombol. Tinggi 1 tombol (padding + border + font) ~40-45px.
-         * Jarak antar tombol + padding atas/bawah .header-actions.
-         * Perkiraan: (2 * (45px + 8px margin)) + 20px padding .header-actions = ~126px.
-         * COBA DENGAN ANGKA SEKITAR 110px - 130px dan sesuaikan.
-         */
-        padding-top: 150px; /* <<<< SESUAIKAN ANGKA INI! >>>> */
+        padding-top: 120px; /* Space for header actions */
     }
     .main-navigation ul {
         flex-direction: column;
@@ -1172,20 +1197,25 @@ ul {
     }
     .main-navigation ul li a {
         display: block;
-        padding: 14px 20px; /* Padding untuk link navigasi */
+        padding: 15px 20px; /* Touch-friendly padding */
+        min-height: 44px; /* Touch-friendly tap target */
         border-bottom: 1px solid var(--kibar-light-gray);
     }
     .main-navigation ul li:last-child a {
-        border-bottom: none; /* Hapus border untuk item terakhir */
+        border-bottom: none;
     }
 
-    /* Penyesuaian Hero Section */
+    /* Penyesuaian Hero Section untuk Tablet */
+    .hero-section {
+        height: 70vh;
+        min-height: 450px;
+    }
     .hero-title { font-size: 2.8rem; }
     .hero-subtitle { font-size: 1.1rem; }
     
     /* Penyesuaian Layout Konten Halaman Dalam */
     .content-section .main-content {
-        padding-right: 0; /* Hapus padding kanan di mobile */
+        padding-right: 0;
         margin-bottom: 40px; 
     }
     .core-values {
@@ -1202,7 +1232,7 @@ ul {
 
     .footer-col { 
         text-align: center; 
-        margin-bottom: 30px; /* Beri jarak antar kolom footer di mobile */
+        margin-bottom: 30px;
     }
     .footer-col:last-child {
         margin-bottom: 0;
@@ -1212,7 +1242,7 @@ ul {
         display: flex; 
     }
 
-    /* Penyesuaian untuk Halaman Kontak di Mobile */
+    /* Penyesuaian untuk Halaman Kontak di Tablet */
     .contact-info-column {
         text-align: center; 
     }
@@ -1224,9 +1254,9 @@ ul {
         text-align: center;
     }
     
-    /* Penyesuaian untuk Kartu Program Kerja di Mobile */
+    /* Penyesuaian untuk Kartu Program Kerja di Tablet */
     .program-cards-container {
-        grid-template-columns: 1fr; /* 1 kolom di mobile */
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
     .program-card .card-title {
         font-size: 1.3rem;
@@ -1237,31 +1267,243 @@ ul {
     }
 }
 
-/* Media Query untuk layar yang lebih kecil lagi (jika diperlukan) */
+/* Mobile (< 768px) */
 @media (max-width: 767.98px) {
+    /* Semua kolom jadi full width */
+    .col-md-7, .col-md-5, .col-lg-4, .col-md-6, .col-lg-2, .col-lg-3,
+    .col-lg-8, .col-lg-4, .col-md-4, .col-6 {
+        width: calc(100% - 30px);
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 20px;
+    }
+    .col-md-7:last-child, .col-md-5:last-child, 
+    .col-lg-4:last-child, .col-md-6:last-child, 
+    .col-lg-2:last-child, .col-lg-3:last-child,
+    .col-lg-8:last-child, .col-lg-4:last-child,
+    .col-md-4:last-child, .col-6:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Hero Section untuk Mobile */
     .hero-section { 
         height: auto; 
-        min-height: 450px; 
-        padding: 60px 0;
+        min-height: 100vh; 
+        padding: 80px 0 60px;
     }
-    .hero-title { font-size: 2.2rem; }
-    .hero-subtitle { font-size: 1rem; }
+    .hero-title { 
+        font-size: clamp(1.8rem, 8vw, 2.5rem); /* Responsive font size */
+        letter-spacing: 1px;
+    }
+    .hero-subtitle { 
+        font-size: 1rem;
+        line-height: 1.6;
+    }
     .hero-actions .btn { 
         display: block; 
         margin: 10px auto; 
-        width: 80%;
+        width: 90%;
+        max-width: 300px;
+        min-height: 44px; /* Touch-friendly */
     }
 
-    .section-padding { padding: 60px 0; }
-    .section-title { font-size: 1.8rem; margin-bottom: 40px;}
-    h3 { font-size: 1.5rem; } /* Ukuran H3 umum */
-    h4 { font-size: 1.1rem; } /* Ukuran H4 umum */
+    /* Typography adjustments */
+    .section-padding { padding: 50px 0; }
+    .section-title { 
+        font-size: clamp(1.5rem, 6vw, 1.8rem);
+        margin-bottom: 30px;
+    }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1rem; }
 
-    .partner-logo-slide img { max-height: 50px; }
+    /* Leader cards */
+    .leader-card {
+        padding: 25px 20px;
+    }
+    .leader-photo {
+        width: 140px;
+        height: 140px;
+    }
+    .leader-name {
+        font-size: 1.2rem;
+    }
 
-    .footer-bottom p { font-size: 0.8rem;}
+    /* Post cards */
+    .post-card-image {
+        height: 180px;
+    }
+    .post-card-content {
+        padding: 20px;
+    }
+    .post-card-title {
+        font-size: 1.1rem;
+    }
 
-    /* Pastikan tidak ada style tabel responsif lama yang tersisa di sini */
+    /* Partner logos */
+    .partner-logo-slide img { max-height: 45px; }
+
+    /* Footer adjustments */
+    .footer-col {
+        width: calc(100% - 30px);
+        margin-bottom: 25px;
+    }
+    .footer-about {
+        margin-bottom: 30px;
+    }
+    .footer-logo {
+        max-height: 70px;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+    .footer-social-icons a {
+        width: 44px; /* Touch-friendly */
+        height: 44px; /* Touch-friendly */
+        margin: 0 8px;
+    }
+
+    /* Coming soon content */
+    .coming-soon-content {
+        padding: 30px 20px;
+    }
+    .coming-soon-content h2 {
+        font-size: 1.5rem;
+    }
+    .coming-soon-content .lead {
+        font-size: 1rem;
+    }
+
+    /* Form adjustments */
+    .contact-form .form-control {
+        min-height: 44px; /* Touch-friendly input */
+    }
+    .contact-form .btn-primary {
+        width: 100%;
+        min-height: 48px;
+    }
+    .contact-form label {
+        font-size: 0.9rem;
+    }
+
+    /* Map */
+    .map-responsive-wrapper {
+        padding-bottom: 75%; /* Taller aspect ratio for mobile */
+    }
+
+    /* Leader cards mobile */
+    .col-lg-4 {
+        width: calc(100% - 30px);
+    }
+
+    /* Program cards mobile */
+    .program-cards-container {
+        grid-template-columns: 1fr;
+    }
+    .program-card .card-title {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+    .program-card .card-content {
+        padding: 15px;
+    }
+    .program-card .program-details ul li {
+        font-size: 0.85rem;
+    }
+
+    /* Sidebar mobile */
+    .widget {
+        padding: 20px;
+    }
+    .widget-title {
+        font-size: 1.1rem;
+    }
+
+    /* Page banner mobile */
+    .page-banner-section {
+        padding: 30px 0;
+    }
+    .page-banner-section .page-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+    .page-banner-image {
+        margin-top: 15px;
+    }
+
+    /* Button adjustments for mobile */
+    .btn {
+        min-height: 44px;
+        line-height: 1.2;
+    }
+    .btn-lg {
+        min-height: 48px;
+    }
+
+    /* Header container mobile */
+    .header-container {
+        flex-wrap: wrap;
+    }
+    .logo {
+        flex: 1;
+    }
+    .logo img {
+        max-height: 45px;
+    }
+
+    /* Section padding mobile */
+    .section-padding-top {
+        padding-top: 50px;
+    }
+
+    /* Focus list mobile */
+    .focus-list li {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+    .focus-list i {
+        font-size: 1.2rem;
+        width: 24px;
+        margin-right: 10px;
+    }
+
+    /* Core values mobile */
+    .value-item {
+        padding: 20px 15px;
+    }
+    .value-item i {
+        font-size: 2rem;
+    }
+    .value-item h3 {
+        font-size: 1.2rem;
+    }
+    .value-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small mobile (< 480px) */
+@media (max-width: 479.98px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .row > [class*="col-"] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .col-md-7, .col-md-5, .col-lg-4, .col-md-6, .col-lg-2, .col-lg-3,
+    .col-lg-8, .col-lg-4, .col-md-4, .col-6 {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 /* ==========================================================================
