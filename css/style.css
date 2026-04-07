@@ -212,13 +212,29 @@ ul {
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+}
+
+.logo {
+    flex-shrink: 0;
 }
 
 .logo img {
     max-height: 55px;
+    display: block;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--kibar-red);
+    margin: 0;
+    letter-spacing: 2px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .main-navigation ul {
@@ -1440,11 +1456,11 @@ ul {
     .header-container {
         flex-wrap: wrap;
     }
-    .logo {
-        flex: 1;
-    }
     .logo img {
         max-height: 45px;
+    }
+    .site-title {
+        font-size: 1.4rem;
     }
 
     /* Section padding mobile */
