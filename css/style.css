@@ -282,7 +282,7 @@ ul {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('../images/banner/hero-background.png');
+    background-image: url('../images/banner/hero-background.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
