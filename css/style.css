@@ -373,18 +373,21 @@ ul {
 }
 .focus-list {
     padding-left: 0;
+    list-style: none;
 }
 .focus-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 1.05rem;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 .focus-list i {
-    font-size: 1.5rem;
-    margin-right: 15px;
-    width: 30px;
+    font-size: 1.3rem;
+    margin-right: 10px;
+    min-width: 20px;
     text-align: center;
+    margin-top: 2px;
 }
 
 /* Key Leaders Section */
@@ -1242,8 +1245,8 @@ ul {
     }
 
     /* Penyesuaian Lainnya */
-    .about-short-text, .about-short-focus { text-align: center; }
-    .focus-list li { justify-content: center; }
+    .about-short-text { text-align: center; }
+    .focus-list li { justify-content: flex-start; }
     .focus-list i { margin-right: 10px;}
 
     .footer-col { 
@@ -1470,14 +1473,16 @@ ul {
 
     /* Focus list mobile */
     .focus-list li {
-        font-size: 0.95rem;
-        margin-bottom: 15px;
-        padding: 10px;
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        padding: 0;
+        line-height: 1.4;
     }
     .focus-list i {
-        font-size: 1.2rem;
-        width: 24px;
-        margin-right: 10px;
+        font-size: 1.1rem;
+        min-width: 18px;
+        margin-right: 8px;
+        margin-top: 1px;
     }
 
     /* Core values mobile */
