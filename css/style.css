@@ -1,3 +1,73 @@
+/* ==========================================================================
+   Announcement Bar - Running Text
+   ========================================================================== */
+.announcement-bar {
+    background-color: var(--kibar-gold);
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.announcement-bar__track {
+    display: flex;
+    width: max-content;
+    animation: announcement-scroll 20s linear infinite;
+}
+
+.announcement-bar__text {
+    white-space: nowrap;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--kibar-red);
+    padding-right: 50px;
+}
+
+@keyframes announcement-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.announcement-bar:hover .announcement-bar__track {
+    animation-play-state: paused;
+}
+
+/* Adjust header spacing for announcement bar */
+.site-header {
+    top: 42px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767.98px) {
+    .announcement-bar {
+        padding: 8px 0;
+    }
+    .announcement-bar__text {
+        font-size: 0.85rem;
+    }
+    .announcement-bar__track {
+        animation-duration: 15s;
+    }
+    .site-header {
+        top: 36px;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .announcement-bar__text {
+        font-size: 0.8rem;
+    }
+    .announcement-bar__track {
+        animation-duration: 12s;
+    }
+}
+
 /* Global Resets & Variables */
 :root {
     --kibar-red: #D50000;
