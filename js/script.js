@@ -200,11 +200,8 @@ window.addEventListener('load', function() {
         } catch (error) {
             console.error("Error initializing Tiny Slider:", error);
         }
-    } else if (partnerCarouselElement && typeof tns !== 'function') {
-        console.warn('Tiny Slider (tns) function is not defined. Make sure the library is loaded correctly.');
-    } else if (!partnerCarouselElement) {
-        console.warn('.partner-carousel element not found.');
     }
+    // Note: .partner-carousel only exists on index.html
     
     // Add loading="lazy" to all images that are not in viewport initially
     const images = document.querySelectorAll('img:not([loading])');
